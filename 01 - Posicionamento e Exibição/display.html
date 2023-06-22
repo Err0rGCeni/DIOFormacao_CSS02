@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        div {
+            margin: 10px;
+            padding: 10px;
+            border: 3px dashed black;
+            color: auto;
+        }
+
+        .block {
+            display: block;
+            background-color: teal;
+        }
+
+        .inline {
+            display: inline;
+            background-color: orange;
+        }
+
+        .inline-block {
+            display: inline-block;
+            background-color: cornflowerblue;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .flex {
+            display: flex;
+            background-color: brown;
+        }
+
+        .grid {
+            display: grid;
+            background-color: purple;
+        }
+    </style>
+    <script defer>
+        function handleDisplay(value) {
+            const div01 = document.getElementById('div01')
+            const div02 = document.getElementById('div02')
+            const div03 = document.getElementById('div03')
+            const divs = new Array(div01, div02, div03)
+            divs.forEach(div => {
+                div.className = value;
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="block" id="div01">
+        Exemplo 01
+    </div>
+    <div class="block" id="div02">
+        Exemplo 02
+    </div>
+    <div class="block" id="div03">
+        Exemplo 03
+    </div>
+
+    <div>
+        <label for="displaySelection">Display: </label>    
+        <select id="displaySelection" onchange="handleDisplay(this.value)">
+            <option value="block">block</option>
+            <option value="inline">inline</option>
+            <option value="inline-block">inline-block</option>
+            <option value="none">none</option>
+            <option value="flex">flex</option>
+            <option value="grid">grid</option>
+        </select>
+    </div>
+    
+</body>
+</html>

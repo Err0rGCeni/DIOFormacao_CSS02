@@ -1,0 +1,36 @@
+a {
+    text-decoration: none;
+}
+
+@media print {
+    body {
+        background-color: black;
+        color: white;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    a {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 500) {
+    a {
+        font-size: 18px;
+    }
+}
+
+@media screen and (pointer: coarse) {
+    a {
+        border: 1px solid red;
+    }
+}
+
+h1 {
+    font-size: calc(1.5rem + 3vw);
+}
+
+p {
+    font-size: 1rem;
+}

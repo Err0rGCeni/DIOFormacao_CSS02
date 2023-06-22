@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .container {
+            background-color: palegreen;
+            padding: 20px;
+            display: flex;
+        }
+
+        .item {
+            background-color: orange;
+            margin: 10px;
+        }
+        
+    </style>
+    <script>
+        function handleFlexGrow(e){
+            if(e.id == "numberItem") {
+                const itens = document.getElementsByClassName("item");
+                for (let index = 0; index < itens.length; index++) {
+                    const item = itens[index];
+                    item.style.flexGrow = e.value                    
+                }
+            } else {
+                document.getElementById('target').style.flexGrow = e.value
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Item 01</div>
+        <div class="item">Item 02</div>
+        <div class="item" id="target">Item XX</div>
+        <div class="item">Item 03</div>
+        <div class="item">Item 04</div>
+    </div>
+
+    <div>
+        <p>Flex-Grow</p>
+        <label>
+            Item:
+            <input type="number" id="numberItem" min="0" value="0" onchange="handleFlexGrow(this)">
+        </label>
+        <label>
+            Target:
+            <input type="number" id="numberTarget" min="0" value="0" onchange="handleFlexGrow(this)">
+        </label>
+    </div>
+    
+</body>
+</html>

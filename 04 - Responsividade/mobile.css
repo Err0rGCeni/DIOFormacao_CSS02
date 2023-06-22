@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav li {
+    background-color: lightcyan;
+    padding: 8px;
+    border-radius: 4px;
+    list-style: none;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.skills {
+    background-color: aquamarine;
+    border: 1px solid green;
+    border-radius: 4px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-direction: red;
+}
+
+@media screen and (min-width: 720px) {
+    main {
+        flex-direction: row;
+        gap: 24px;
+    }
+}

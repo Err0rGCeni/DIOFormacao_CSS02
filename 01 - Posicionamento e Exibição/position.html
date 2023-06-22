@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        
+        div {
+            margin: 10px;
+            padding: 10px;
+            height: 200px;
+            width: 200px;
+            display: inline-block;
+            background-color: gray;
+            border: 5px dashed black;
+        }
+
+        .container {
+            height: 200vh;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            background-color: black;
+            border: 0px;
+        }
+
+        .static {
+            position: static;
+        }
+
+        .relative {
+            background-color: aquamarine;
+            position: relative;
+            top: 100px;
+            left: 50px;
+        }
+
+        .absolute {
+            background-color: blanchedalmond;
+            position: absolute;
+            top: 0px;
+            right: 25px;
+        }
+
+        .fixed {
+            background-color: indianred;
+            position: fixed;
+            top: 50px;
+            left: 100px;
+        }
+
+        .sticky {
+            background-color: azure;
+            position: sticky;
+            top: 250px;
+            bottom: 25px;
+            right: 25px;
+        }
+        
+    </style>
+    <script defer>
+        function handlePosition(value) {
+            const div02 = document.getElementById('div02')
+            div02.className = value
+            var rect = div02.getBoundingClientRect();
+            div02.textContent = `Coisa 02: ${rect.left}/${rect.top}`
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="div01">
+            Elemento 01
+        </div>
+        <div id="div02">
+            Coisa 02
+        </div>
+        <div id="div03">
+            Exemplo 03
+        </div>
+    
+        <div>
+            <label for="displaySelection">Display: </label>    
+            <select id="displaySelection" onchange="handlePosition(this.value)">
+                <option value="static">static</option>
+                <option value="relative">relative</option>
+                <option value="absolute">absolute</option>
+                <option value="fixed">fixed</option>
+                <option value="sticky">sticky</option>
+            </select>
+        </div>
+
+    </div>
+</body>
+</html>

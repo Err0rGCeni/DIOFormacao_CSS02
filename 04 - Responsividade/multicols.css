@@ -1,0 +1,9 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    /*column-count: 3;*/
+    column-width: 250px;
+    column-rule: 1px dashed darkgoldenrod;
+}
